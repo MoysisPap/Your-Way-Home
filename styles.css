@@ -53,6 +53,7 @@ button:active {
   display: flex;
   width: 70%;
   position: absolute;
+  justify-content: space-evenly;
   z-index: 2;
   border-radius: 30px;
   top: 40%;
@@ -147,6 +148,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   width: 100vw;
   height: 100dvh;
   background-color: #7c41fa;
@@ -163,7 +165,6 @@ button:active {
   color: #7c41fa;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  margin-top: 10%;
   font-size: 16px;
   padding: 14px 20px;
   align-self: self-start;
@@ -175,8 +176,6 @@ button:active {
   font-weight: 700;
   color: white;
   align-self: flex-start;
-  margin-top: 7%;
-  margin-bottom: 7%;
 }
 
 .lineBtn {
@@ -205,7 +204,6 @@ button:active {
 #safetyQ {
   font-weight: 600;
   font-size: 20px;
-  margin-top: 30%;
 }
 
 #valueRange {
@@ -227,14 +225,12 @@ button:active {
 #timeQ {
   font-size: 20px;
   font-weight: 600;
-  padding-top: 21%;
   align-self: flex-start;
 }
 
 #whyQ {
   font-size: 20px;
   font-weight: 600;
-  padding-top: 10%;
   align-self: flex-start;
 }
 
@@ -251,8 +247,6 @@ button:active {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding-bottom: 34%;
-  padding-top: 15%;
 }
 
 .ratingBtnBottom {
@@ -267,15 +261,13 @@ button:active {
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
-  position: absolute;
-  bottom: 5%;
-  width: 80%;
 }
 
 #finalDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   width: 100vw;
   height: 100dvh;
   background-color: #7c41fa;
@@ -366,7 +358,7 @@ button:active {
   box-sizing: border-box;
   font-weight: 300;
   align-self: flex-start;
-  gap: 0.3rem;
+  gap: 0.2rem;
 }
 
 .terms-label a {
@@ -392,8 +384,6 @@ button:active {
 #commentText {
   font-size: 20px;
   font-weight: 600;
-  margin-top: 15%;
-  margin-bottom: 5%;
   align-self: flex-start;
 }
 
@@ -433,8 +423,6 @@ button:active {
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
-  position: absolute;
-  bottom: 5%;
   width: 80%;
 }
 
@@ -577,8 +565,6 @@ input[type='email'] {
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 18px;
-  margin-top: 6%;
-  margin-bottom: 7%;
   box-shadow: none;
   outline: none;
 }
