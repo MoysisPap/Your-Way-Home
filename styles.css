@@ -373,14 +373,14 @@ button:active {
   cursor: pointer;
 }
 #contact {
-appearance: none;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #562dad;
-    background-color: #ffffff;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #562dad;
+  background-color: #ffffff;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
 }
 
 #contact:checked {
