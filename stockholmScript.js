@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to show the next container
   function showNextContainer(currentIndex) {
     if (currentIndex < containers.length - 1) {
-      containers[currentIndex].style.display = 'none'; // Hide current
-      containers[currentIndex + 1].style.display = 'flex'; // Show next
+      containers[currentIndex].style.display = 'none';
+      containers[currentIndex + 1].style.display = 'flex';
     }
   }
 
   // Function to show the previous container
   function showPreviousContainer(currentIndex) {
     if (currentIndex > 0) {
-      containers[currentIndex].style.display = 'none'; // Hide current
-      containers[currentIndex - 1].style.display = 'flex'; // Show previous
+      containers[currentIndex].style.display = 'none';
+      containers[currentIndex - 1].style.display = 'flex';
     }
   }
 
@@ -43,21 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
     if (locationInput.value.trim() === '') {
       alert('Please enter your location before proceeding.');
     } else {
-      showNextContainer(2); // Show the ratingDiv
+      showNextContainer(2);
     }
   });
 
-  let ratingInteracted = false; // Flag to track interaction with the slider
+  let ratingInteracted = false;
 
   document.getElementById('rating').addEventListener('input', () => {
-    ratingInteracted = true; // Set the flag to true when the slider is interacted with
+    ratingInteracted = true;
   });
 
   document.getElementById('ratingBtn').addEventListener('click', () => {
     if (!ratingInteracted) {
       alert('Please move the rating slider before proceeding.');
     } else {
-      showNextContainer(3); // Show the next container
+      showNextContainer(3);
     }
   });
 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!ratingInteracted) {
       alert('Please move the rating slider before proceeding.');
     } else {
-      showNextContainer(3); // Show the next container
+      showNextContainer(3);
     }
   });
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .querySelector('button[type="button"]')
     .addEventListener('click', () => showPreviousContainer(3));
 
-  initMap(); // Initialize the Google Map once the DOM is ready
+  initMap();
 });
 
 // Google Maps code
@@ -131,10 +131,10 @@ function validateInputs(div) {
   const inputs = div.querySelectorAll('input[required], textarea[required]');
   for (const input of inputs) {
     if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-      return false; // Required input is not filled
+      return false; 
     }
   }
-  return true; // All required inputs are filled
+  return true; 
 }
 
 // Function to handle back div transition
@@ -143,7 +143,6 @@ function backDiv(currentDivId, previousDivId) {
   document.getElementById(previousDivId).style.display = 'flex';
 }
 
-// Optionally, if you want to adjust the track style with the range input:
 document.getElementById('rating').addEventListener('input', function () {
   this.style.setProperty(
     '--value',
@@ -154,7 +153,7 @@ document.getElementById('rating').addEventListener('input', function () {
 // Function to handle form submission
 function submitForm() {
   if (!validateForm() || formSubmitted) {
-    return; // Prevent further execution if validation fails or form is already submitted
+    return;
   }
 
   // Set the flag to indicate that the form is submitted
@@ -200,12 +199,10 @@ function submitForm() {
     .then((response) => response.json())
     .then((result) => {
       console.log('Success:', result);
-      // Reset the form submission flag after processing the response
       formSubmitted = false;
     })
     .catch((error) => {
       console.error('Error:', error);
-      // Reset the form submission flag on error as well
       formSubmitted = false;
     });
 
@@ -252,12 +249,12 @@ document
       event.preventDefault();
     } else {
       submitForm();
-      event.preventDefault(); // Prevent default submission to avoid reload
+      event.preventDefault();
     }
   });
 
 function updateValue(value) {
-  document.getElementById('currentValue').innerText = value; // Update the span's innerText with the new value
+  document.getElementById('currentValue').innerText = value;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -282,18 +279,18 @@ document.addEventListener('DOMContentLoaded', () => {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
         console.log(`User response to the install prompt: ${outcome}`);
-        deferredPrompt = null; // Reset after prompting
+        deferredPrompt = null;
       }
     });
 });
 
 function togglePopup(event) {
-  event.stopPropagation(); // Prevents event from bubbling up
+  event.stopPropagation();
   const popup = document.getElementById('emailPopup');
   popup.classList.toggle('show');
 }
 
-// Optional: Close the popup when clicking outside of it
+// Close the popup when clicking outside of it
 document.addEventListener('click', function (event) {
   const popup = document.getElementById('emailPopup');
   if (
