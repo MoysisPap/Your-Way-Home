@@ -1,0 +1,825 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+button {
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border: none;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0px 0px 0px 0px #00000040;
+  cursor: pointer;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 2;
+}
+
+#installButton {
+  display: block;
+  position: fixed;
+  top: 11px;
+  right: 55px;
+  padding: 10px 20px;
+  background-color: #7c41fa;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 5;
+}
+
+#installButton:hover {
+  background-color: #442a97;
+}
+
+#info_Container,
+#instructions_Container {
+  display: flex;
+  width: 70%;
+  position: absolute;
+  z-index: 2;
+  border-radius: 30px;
+  top: 40%;
+  height: 310px;
+  background-color: #7c41fa;
+  color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#instructions_Container h2 {
+  align-self: center;
+}
+
+#instructions_Container img {
+  width: 65%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+#info_Container li {
+  margin: 0 0 1rem 0;
+  font-size: 20px;
+}
+
+#infoBtn,
+#instructions_Btn {
+  background-color: #ffffff;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  color: #7c41fa;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+#locationDiv {
+  background-color: #7c41fa;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+  height: 25vh;
+  border: none;
+}
+
+#locationDiv input[type='text'] {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 8px;
+  border: none;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+#location {
+  width: auto;
+  background: none;
+  box-shadow: none;
+  color: white;
+  border-bottom: #ffffff 1px solid !important;
+  border-radius: 0 !important;
+  margin-bottom: 2rem;
+}
+
+#locationBtn {
+  background-color: #ffffff;
+  width: 80%;
+  height: 60px;
+  border-radius: 10px;
+  color: #7c41fa;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+#ratingDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #7c41fa;
+  z-index: 10;
+  position: relative;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-sizing: border-box;
+}
+
+#backBtn {
+  background-color: white;
+  color: #7c41fa;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-top: 10%;
+  font-size: 16px;
+  padding: 14px 20px;
+  align-self: self-start;
+  border-radius: 12px;
+}
+
+.pageInfo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  align-self: flex-start;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+.lineBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.whiteLineBtn,
+.yellowLineBtn {
+  padding: 0.5rem 3rem;
+  width: 45%;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.whiteLineBtn {
+  background-color: #ffffff;
+}
+
+.yellowLineBtn {
+  background-color: #faec28;
+  border: none;
+}
+
+#safetyQ {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 30%;
+}
+
+#valueRange {
+  display: flex;
+  width: 100%;
+  padding-bottom: 10%;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10%;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#currentValue {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+#timeQ {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 21%;
+  align-self: flex-start;
+}
+
+#whyQ {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 10%;
+  align-self: flex-start;
+}
+
+#dayTimeCheck {
+  font-weight: lighter;
+  align-self: flex-start;
+  margin-top: 5px;
+  margin-bottom: 5%;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+#dayFieldset {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 34%;
+  padding-top: 15%;
+}
+
+.ratingBtnBottom {
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #7c41fa;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  border-radius: 12px;
+  height: 60px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+}
+
+#finalDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #7c41fa;
+  z-index: 10;
+  position: relative;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-sizing: border-box;
+}
+
+#reasoningContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+#dayFieldset img {
+  margin-right: 10px;
+}
+
+#reasoningContainer label {
+  flex: 0 1 calc(40% - 5px);
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  color: white;
+  padding: 10px 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+#dayFieldset label {
+  flex: 0 1 calc(40% - 5px);
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  color: white;
+  padding: 10px 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+#dayFieldset input[type='checkbox'] {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #562dad;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-right: 10px; /* Space between checkbox and label text */
+  outline: none;
+  cursor: pointer;
+}
+
+#reasoningContainer input[type='checkbox'] {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #562dad;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-right: 10px; /* Space between checkbox and label text */
+  outline: none;
+  cursor: pointer;
+}
+
+/* Optional: Add styles for checked state */
+#dayFieldset input[type='checkbox']:checked {
+  background-color: #faec28; /* Color when checked */
+}
+
+/* Optional: Add styles for checked state */
+#reasoningContainer input[type='checkbox']:checked {
+  background-color: #faec28; /* Color when checked */
+}
+
+.terms-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  box-sizing: border-box;
+  font-weight: 300;
+  align-self: flex-start;
+  gap: 0.3rem;
+}
+
+.terms-label a {
+  color: #ffffff;
+}
+
+#terms {
+  appearance: none; /* Remove default styling */
+  width: 40px; /* Custom width */
+  height: 40px; /* Custom height */
+  border: 2px solid #562dad; /* Border color */
+  background-color: #ffffff; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  outline: none; /* Remove outline */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Checked state */
+#terms:checked {
+  background-color: #faec28; /* Color when checked */
+}
+
+#commentText {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  align-self: flex-start;
+}
+
+/* Style the textarea box */
+#comments {
+  width: 93%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border-radius: 10px;
+  resize: vertical;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  align-self: self-start;
+}
+
+#comments::placeholder {
+  font-style: italic;
+  color: #949494;
+}
+
+#email::placeholder {
+  font-style: italic;
+  color: #949494;
+}
+
+.submitBtn {
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #7c41fa;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  border-radius: 12px;
+  height: 60px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+}
+
+/* Add style for focus */
+#comments:focus {
+  border-color: #66afe9; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Blue shadow on focus */
+}
+
+/* General styles for the range input */
+input[type='range'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 95%;
+  height: 15px;
+  background: #ffffff;
+  outline: none;
+  transition: opacity 0.2s;
+  border-radius: 15px;
+}
+
+/* Track styles for WebKit browsers (Chrome, Safari) */
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #32e114 0%,
+    #32e114 var(--value),
+    #ffffff var(--value),
+    #ffffff 100%
+  );
+  border-radius: 15px;
+}
+
+/* Track styles for Firefox */
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: #ffffff; /* Track background */
+  border-radius: 15px;
+}
+
+/* Track styles for Internet Explorer */
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Filled portion styles for Firefox */
+input[type='range']::-moz-range-progress {
+  background: #32e114; /* Filled portion background */
+}
+
+/* Filled portion styles for Internet Explorer */
+input[type='range']::-ms-fill-lower {
+  background: #32e114; /* Filled portion background */
+}
+
+input[type='range']::-ms-fill-upper {
+  background: #ffffff; /* Unfilled portion background */
+}
+
+/* Thumb styles for WebKit browsers (Chrome, Safari) */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background: #faec28;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -13px; /* Adjust to align thumb with track */
+}
+
+/* Thumb styles for Firefox */
+input[type='range']::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background: #faec28;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Thumb styles for Internet Explorer */
+input[type='range']::-ms-thumb {
+  width: 40px;
+  height: 40px;
+  background: #faec28;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Focus styles */
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #32e114 0%,
+    #32e114 var(--value),
+    #ffffff var(--value),
+    #ffffff 100%
+  );
+}
+
+input[type='range']:focus::-moz-range-progress {
+  background: #32e114; /* Filled portion background */
+}
+
+input[type='range']:focus::-ms-fill-lower {
+  background: #32e114; /* Filled portion background */
+}
+
+input[type='range']:focus::-ms-fill-upper {
+  background: #ffffff; /* Unfilled portion background */
+}
+
+.email-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input[type='email'] {
+  width: 93%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+  margin-top: 6%;
+  margin-bottom: 7%;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Info icon */
+.info-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-55%);
+  font-size: 20px;
+  color: #7c41fa;
+  cursor: pointer;
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: absolute;
+  top: 55px; /* Adjust to position the popup below the icon */
+  right: 0;
+  background-color: #341a6d;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 250px;
+  z-index: 10;
+}
+
+.popup.show {
+  display: block;
+}
+
+#thanksDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #ffffff; /* Or your background color */
+  color: #7c41fa;
+  position: absolute;
+  z-index: 20;
+  box-sizing: border-box;
+  padding: 0 12%;
+}
+
+#thanksDiv h2 {
+  font-size: 27px;
+  margin-top: 30%;
+  font-weight: 700;
+}
+
+#thanksDiv h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5%;
+  align-self: self-start;
+}
+
+#newPinBtn {
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #7c41fa;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  border-radius: 12px;
+  height: 60px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  margin-top: 40%;
+}
+
+#backToInstructionsBtn {
+  background-color: #ffffff;
+  border: 1px solid #7c41fa;
+  cursor: pointer;
+  border-radius: 10px;
+  position: absolute;
+  top: -275%;
+  left: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#backToInstructionsBtn img {
+  width: 25px;
+  height: 25px;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+}
+
+#ratingFinalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #7c41fa;
+  z-index: 10;
+  position: relative;
+  color: white;
+  padding-left: 12%;
+  padding-right: 12%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  #info_Container {
+    width: 40%;
+    top: 30%;
+  }
+
+  #instructions_Container {
+    width: 40%;
+    top: 30%;
+  }
+
+  #instructions_Container img {
+    width: 35%;
+    align-self: center;
+  }
+
+  #backToInstructionsBtn {
+    top: -268%;
+  }
+
+  #locationDiv {
+    padding-left: 25%;
+    padding-right: 25%;
+    width: 50%;
+  }
+
+  #ratingDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Position it in the middle */
+    left: 50%; /* Position it in the middle */
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #ratingDiv * {
+    margin: 0%;
+  }
+
+  #dayFieldset {
+    padding-bottom: 0%;
+    padding-top: 0%;
+  }
+
+  #timeQ {
+    padding-top: 0%;
+  }
+
+  #finalDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Position it in the middle */
+    left: 50%; /* Position it in the middle */
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #finalDiv * {
+    margin: 0%;
+  }
+
+  #comments {
+    height: 50px;
+  }
+
+  .submitBtn {
+    height: auto;
+  }
+
+  #whyQ {
+    padding-top: 0%;
+  }
+
+  .submitBtn {
+    position: relative;
+    bottom: 0;
+    width: -webkit-fill-available;
+  }
+
+  #thanksDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Position it in the middle */
+    left: 50%; /* Position it in the middle */
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #thanksDiv * {
+    margin: 0%;
+    padding: 0%;
+  }
+  #thanksDiv h2,
+  #thanksDiv h3 {
+    margin: 0%;
+  }
+
+  .terms-label {
+    align-self: flex-start;
+  }
+}
