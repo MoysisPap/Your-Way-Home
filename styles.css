@@ -237,8 +237,6 @@ button:active {
 #dayTimeCheck {
   font-weight: lighter;
   align-self: flex-start;
-  margin-top: 5px;
-  margin-bottom: 5%;
   font-weight: 300;
   font-size: 15px;
 }
@@ -288,6 +286,7 @@ button:active {
 
 #dayFieldset img {
   margin-right: 10px;
+  height: 30px;
 }
 
 #reasoningContainer label {
@@ -316,8 +315,8 @@ button:active {
 
 #dayFieldset input[type='checkbox'] {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -328,8 +327,8 @@ button:active {
 
 #reasoningContainer input[type='checkbox'] {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -365,13 +364,27 @@ button:active {
 
 #terms {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
   outline: none;
   cursor: pointer;
+}
+#contact {
+appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #562dad;
+    background-color: #ffffff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+#contact:checked {
+  background-color: #faec28;
 }
 
 #terms:checked {
@@ -386,7 +399,7 @@ button:active {
 
 #comments {
   width: 93%;
-  height: 100px;
+  height: 10%;
   padding: 10px;
   font-size: 16px;
   color: #333;

@@ -164,6 +164,7 @@ function submitForm() {
   let rating = document.getElementById('rating').value;
   let comments = document.getElementById('comments').value;
   let email = document.getElementById('email').value;
+  let contact = document.getElementById('contact').value;
 
   let timeOfDayCheckboxes = document.querySelectorAll(
     'input[name="timeOfDay"]:checked'
@@ -184,13 +185,14 @@ function submitForm() {
     timeOfDay: timeOfDay.join(', '),
     options: selectedOptions.join(', '),
     timeStamp: new Date().toLocaleString(),
+    contact: contact,
   });
 
   document.getElementById('finalDiv').style.display = 'none';
   document.getElementById('thanksDiv').style.display = 'flex';
 
   fetch(
-    'https://script.google.com/macros/s/AKfycbzJUTWcmxLICw4CXIvPklj3Hl1aNe0eFt0jkK0NpEEuhTwP8xm4OxSsUQ4i50aYStklOA/exec',
+    'https://script.google.com/macros/s/AKfycbxl8SNTtCf0d2IIx8uaZCv9S4rMw3SwRBA0jk_uzXMxnXDvkartcLevPvYzAikaY6OowA/exec',
     {
       method: 'POST',
       body: data,
