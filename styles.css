@@ -150,7 +150,7 @@ button:active {
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: #7c41fa;
   z-index: 10;
   position: relative;
@@ -269,7 +269,7 @@ button:active {
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: #7c41fa;
   z-index: 10;
   position: relative;
