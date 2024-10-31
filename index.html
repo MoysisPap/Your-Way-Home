@@ -48,6 +48,7 @@
       </div>
       <!--Rating Div-->
       <div id="ratingDiv" style="display: none">
+        <div class="btnsSection">
         <button
           id="backBtn"
           type="button"
@@ -60,6 +61,8 @@
           <button class="yellowLineBtn" type="button" disabled></button>
           <button id="ratingBtn" class="whiteLineBtn" type="button"></button>
         </div>
+      </div>
+        <div class="safetyRange">
         <span id="safetyQ">How safe does this area feel?*</span>
         <div id="valueRange">
           <span>Very Unsafe</span>
@@ -76,10 +79,12 @@
           oninput="updateValue(this.value)"
           required
         />
-        <span id="timeQ"
-          >Around what time of the day did it feel like that?</span
-        >
-        <small id="dayTimeCheck">(Check all that apply)</small>
+        </div>
+        <div class="time-wrapper">
+        <div class="timeQ-wrapper">
+          <span id="timeQ">Around what time of the day did it feel like that?</span>
+          <small id="dayTimeCheck">(Check all that apply)</small>
+        </div>
         <div id="dayFieldset">
           <label
             ><input type="checkbox" name="timeOfDay" value="day" />
@@ -91,12 +96,14 @@
             Night</label
           >
         </div>
+      </div>
         <button id="nextRatingBtn" class="ratingBtnBottom" type="button">
           Next
         </button>
       </div>
       <!--Final Div-->
       <div id="finalDiv" style="display: none">
+        <div class="btns2Section">
         <button
           id="backBtn"
           type="button"
@@ -114,8 +121,12 @@
           ></button>
           <button class="yellowLineBtn" type="button" disabled></button>
         </div>
+        </div>
+        <div class="reasoning-wrapper">
+        <div class="timeQ-wrapper">
         <span id="whyQ">Why does it feels this way?</span>
         <small id="dayTimeCheck">(Check all that apply)</small>
+        </div>
         <div id="reasoningContainer">
           <label>
             <input type="checkbox" name="options" value="Lighting" />Lighting
@@ -134,6 +145,8 @@
             <input type="checkbox" name="options" value="Vibes" />Vibes
           </label>
         </div>
+        </div>
+        <div class="email-container">
         <label for="comments" id="commentText"
           >Why does it feels this way?</label
         >
@@ -162,7 +175,6 @@
             marketing purposes.
           </div>
         </div>
-
         <label class="terms-label">
           <input type="checkbox" id="terms" required />
           I accept the
@@ -175,8 +187,9 @@
           >*
         </label>
         <label class="terms-label">
-        <input type="checkbox" id="contact" value="Yes" />I want to be contacted for user tasting.
+        <input type="checkbox" id="contact" value="Yes" />I want to be contacted for user testing.
         </label>
+        </div>
         <button type="submit" class="submitBtn" onclick="submitForm()">
           Submit
         </button>

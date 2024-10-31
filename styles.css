@@ -30,6 +30,60 @@ button:active {
   flex-shrink: 2;
 }
 
+.timeQ-wrapper {
+  display: inline-flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  gap: 3px; /* Eliminates any space between them */
+  width: 100%;
+}
+
+.time-wrapper {
+  display: flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  gap: 2rem; /* Eliminates any space between them */
+  width: 100%;  
+  margin-bottom: 10%;
+}
+
+.reasoning-wrapper {
+  display: flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  width: 100%;  
+  gap: 0.5rem;
+}
+
+.btnsSection {
+  display: flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  gap: 1.5rem; /* Eliminates any space between them */
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.btns2Section {
+  display: flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  gap: 1.5rem; /* Eliminates any space between them */
+  width: 100%;
+}
+
+.safetyRange {
+  display: inline-flex; /* Keeps the two together */
+  flex-direction: column; /* Ensures they stack directly */
+  gap: 0; /* Eliminates any space between them */
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  }
+
+
 #installButton {
   display: block;
   position: fixed;
@@ -212,7 +266,7 @@ button:active {
   padding-bottom: 10%;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 10%;
+  margin-top: 5%;
   font-weight: 400;
   font-size: 14px;
 }
@@ -243,7 +297,7 @@ button:active {
 
 #dayFieldset {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -265,7 +319,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   width: 100vw;
   height: 100dvh;
   background-color: #7c41fa;
@@ -280,13 +334,12 @@ button:active {
 #reasoningContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: space-between;
 }
 
 #dayFieldset img {
   margin-right: 10px;
-  height: 30px;
+  height: 40px;
 }
 
 #reasoningContainer label {
@@ -315,8 +368,8 @@ button:active {
 
 #dayFieldset input[type='checkbox'] {
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -327,8 +380,8 @@ button:active {
 
 #reasoningContainer input[type='checkbox'] {
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -351,7 +404,6 @@ button:active {
   flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  font-style: italic;
   box-sizing: border-box;
   font-weight: 300;
   align-self: flex-start;
@@ -364,8 +416,8 @@ button:active {
 
 #terms {
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -374,8 +426,8 @@ button:active {
 }
 #contact {
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #562dad;
   background-color: #ffffff;
   border-radius: 10px;
@@ -399,7 +451,7 @@ button:active {
 
 #comments {
   width: 93%;
-  height: 10%;
+  height: 20%;
   padding: 10px;
   font-size: 16px;
   color: #333;
@@ -550,12 +602,6 @@ input[type='range']:focus::-ms-fill-lower {
 
 input[type='range']:focus::-ms-fill-upper {
   background: #ffffff;
-}
-
-.email-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
 }
 
 .input-wrapper {
