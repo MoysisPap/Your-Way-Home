@@ -750,8 +750,8 @@ button:active {
   }
 
   #backToInstructionsBtn {
-    top: 1%;
-    left: 18%;
+    top: 11px;
+    left: 15%;
   }
 
   #instructions_Container img {
