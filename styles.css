@@ -41,29 +41,29 @@ button:active {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
   gap: 2rem; /* Eliminates any space between them */
-  width: 100%;  
-  margin-bottom: 10%;
+  width: 100%;
+  margin-bottom: 5%;
 }
 
 .reasoning-wrapper {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  width: 100%;  
+  width: 100%;
   gap: 0.5rem;
 }
 
 .btnsSection {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 1.5rem; /* Eliminates any space between them */
+  gap: 1rem; /* Eliminates any space between them */
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .btns2Section {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 1.5rem; /* Eliminates any space between them */
+  gap: 1rem; /* Eliminates any space between them */
   width: 100%;
 }
 
@@ -73,7 +73,7 @@ button:active {
   gap: 0; /* Eliminates any space between them */
   width: 100%;
   align-items: center;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .email-container {
@@ -81,8 +81,7 @@ button:active {
   flex-direction: column;
   width: 100%;
   gap: 0.5rem;
-  }
-
+}
 
 #installButton {
   display: block;
@@ -125,9 +124,12 @@ button:active {
 }
 
 #instructions_Container img {
-  width: 65%;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 8px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  align-self: center; /* Centers the image horizontally within the flex container */
 }
 
 #info_Container li {
@@ -297,7 +299,7 @@ button:active {
 
 #dayFieldset {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -319,7 +321,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   width: 100vw;
   height: 100dvh;
   background-color: #7c41fa;
@@ -339,7 +341,7 @@ button:active {
 
 #dayFieldset img {
   margin-right: 10px;
-  height: 40px;
+  height: 30px;
 }
 
 #reasoningContainer label {
@@ -349,7 +351,7 @@ button:active {
   font-family: 'Montserrat', sans-serif;
   font-size: 17px;
   color: white;
-  padding: 10px 0;
+  padding: 5px 0;
   box-sizing: border-box;
   font-weight: 600;
 }
@@ -368,8 +370,8 @@ button:active {
 
 #dayFieldset input[type='checkbox'] {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #ffffff;
   border-radius: 10px;
   margin-right: 10px;
@@ -379,8 +381,8 @@ button:active {
 
 #reasoningContainer input[type='checkbox'] {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #ffffff;
   border-radius: 10px;
   margin-right: 10px;
@@ -414,8 +416,8 @@ button:active {
 
 #terms {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #ffffff;
   border-radius: 10px;
   outline: none;
@@ -423,8 +425,8 @@ button:active {
 }
 #contact {
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #ffffff;
   border-radius: 10px;
   outline: none;
@@ -696,13 +698,14 @@ input[type='email'] {
   border: 1px solid #7c41fa;
   cursor: pointer;
   border-radius: 10px;
-  position: absolute;
-  top: -275%;
-  left: 10px;
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 7%;
+  left: 2%;
+  z-index: 10;
 }
 
 #backToInstructionsBtn img {
@@ -744,10 +747,6 @@ button:active {
   #instructions_Container img {
     width: 35%;
     align-self: center;
-  }
-
-  #backToInstructionsBtn {
-    top: -268%;
   }
 
   #locationDiv {
