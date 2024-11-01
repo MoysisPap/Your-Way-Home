@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Please enter your location before proceeding.');
     } else {
       showNextContainer(2);
+      // Hide the install button on mobile view
+      if (window.innerWidth <= 600) {
+        document.getElementById('installButton').style.display = 'none';
+      }
     }
   });
 
