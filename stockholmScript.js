@@ -83,7 +83,7 @@ let marker;
 
 function initMap() {
   const initialLocation = { lat: 59.33091976142107, lng: 18.060195177256297 };
-  const markerOffset = 0.0025;
+  const markerOffset = 0.0021;
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: initialLocation,
