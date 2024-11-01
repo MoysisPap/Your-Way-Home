@@ -127,8 +127,8 @@ button:active {
 #instructions_Container img {
   max-width: 100%;
   height: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
   align-self: center; /* Centers the image horizontally within the flex container */
 }
@@ -695,7 +695,7 @@ input[type='email'] {
 }
 
 #backToInstructionsBtn {
-  background-color: #ffffff;
+  background-color: #7c41fa;
   border: 1px solid #7c41fa;
   cursor: pointer;
   border-radius: 10px;
@@ -734,6 +734,10 @@ button:active {
   box-sizing: border-box;
 }
 
+
+/************* Desktop Version ********/
+
+
 @media (min-width: 600px) {
   #info_Container {
     width: 40%;
@@ -743,6 +747,11 @@ button:active {
   #instructions_Container {
     width: 40%;
     top: 30%;
+  }
+
+  #backToInstructionsBtn {
+    top: 1%;
+    left: 18%;
   }
 
   #instructions_Container img {
