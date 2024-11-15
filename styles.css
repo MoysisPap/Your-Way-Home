@@ -8,8 +8,68 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  font-size: 22px;
+.hidden-h1 {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Sticky bar styles */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #7c41fa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-top: 0.5px solid #2e185f;
+  min-height: 3rem;
+}
+
+.sticky-bar p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  padding-top: 2px;
+}
+
+/* Icon container styles */
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  transition: transform 0.3s ease; 
+}
+
+/* Icon styles */
+.icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease; 
+}
+
+/* Optional: Add hover effect */
+.icon-container:hover {
+  transform: scale(1.06);
+}
+
+.icon-container:hover .icon {
+  color: #d2d2d2;
+  transform: scale(1.1); /* Adjust scale as needed */
+}
+
+h2 {
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -34,54 +94,54 @@ button:active {
 .timeQ-wrapper {
   display: inline-flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 3px; /* Eliminates any space between them */
+  gap: 0.1rem; /* Eliminates any space between them */
   width: 100%;
 }
 
 .time-wrapper {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 2rem; /* Eliminates any space between them */
+  gap: 0.8rem; /* Eliminates any space between them */
   width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .reasoning-wrapper {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
   width: 100%;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .btnsSection {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 1rem; /* Eliminates any space between them */
+  gap: 0.8rem; /* Eliminates any space between them */
   width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .btns2Section {
   display: flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 1rem; /* Eliminates any space between them */
+  gap: 0.8rem; /* Eliminates any space between them */
   width: 100%;
 }
 
 .safetyRange {
   display: inline-flex; /* Keeps the two together */
   flex-direction: column; /* Ensures they stack directly */
-  gap: 0; /* Eliminates any space between them */
+  gap: 0.8rem; /* Eliminates any space between them */
   width: 100%;
   align-items: center;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .email-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 #installButton {
@@ -89,20 +149,35 @@ button:active {
   position: fixed;
   top: 11px;
   right: 55px;
-  padding: 10px 20px;
+  padding: 0.5rem 0.7rem;
   background-color: #7c41fa;
   color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
-  z-index: 5;
+  font-size: 1rem;
+  z-index: 2;
 }
 
 #installButton:hover {
   background-color: #442a97;
 }
 
-#info_Container,
+#info_Container {
+  display: flex;
+  width: 70%;
+  position: absolute;
+  justify-content: space-evenly;
+  z-index: 2;
+  border-radius: 30px;
+  bottom: 11.5rem;
+  height: 15rem;
+  background-color: #7c41fa;
+  color: #ffffff;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 #instructions_Container {
   display: flex;
   width: 70%;
@@ -110,12 +185,11 @@ button:active {
   justify-content: space-evenly;
   z-index: 2;
   border-radius: 30px;
-  top: 40%;
-  height: 310px;
+  bottom: 11.5rem;
+  height: 15rem;
   background-color: #7c41fa;
   color: #ffffff;
   flex-direction: column;
-  justify-content: center;
   padding: 2rem;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -125,7 +199,7 @@ button:active {
 }
 
 #instructions_Container img {
-  max-width: 100%;
+  max-width: 100%;  
   height: auto;
   margin-top: 3%;
   margin-bottom: 3%;
@@ -134,18 +208,18 @@ button:active {
 }
 
 #info_Container li {
-  margin: 0 0 1rem 0;
-  font-size: 20px;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
 }
 
 #infoBtn,
 #instructions_Btn {
   background-color: #ffffff;
   width: 100%;
-  height: 60px;
-  border-radius: 10px;
+  min-height: 2.5rem;
+  border-radius: 20px;
   color: #7c41fa;
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -164,14 +238,15 @@ button:active {
   left: 0;
   z-index: 3;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
-  height: 25vh;
+  height: 20vh;
   border: none;
+  padding-bottom: 2.5rem;
 }
 
 #locationDiv input[type='text'] {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 400;
   padding: 8px;
   border: none;
@@ -186,16 +261,16 @@ button:active {
   color: white;
   border-bottom: #ffffff 1px solid !important;
   border-radius: 0 !important;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 #locationBtn {
   background-color: #ffffff;
   width: 80%;
-  height: 60px;
-  border-radius: 10px;
+  min-height: 2.5rem;
+  border-radius: 20px;
   color: #7c41fa;
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -207,7 +282,7 @@ button:active {
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 100svh;
+  min-height: 100svh;
   background-color: #7c41fa;
   z-index: 10;
   position: relative;
@@ -215,6 +290,7 @@ button:active {
   padding-left: 10%;
   padding-right: 10%;
   box-sizing: border-box;
+  padding-bottom: 2.5rem;
 }
 
 #backBtn {
@@ -222,17 +298,19 @@ button:active {
   color: #7c41fa;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  padding: 14px 20px;
+  font-size: 1rem;
   align-self: self-start;
-  border-radius: 12px;
+  border-radius: 20px;
+  min-height: 2.5rem;
+  width: 8rem;
 }
 
 .pageInfo {
-  font-size: 1.5em;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
   align-self: flex-start;
+  padding-left: 0.3rem;
 }
 
 .lineBtn {
@@ -243,7 +321,7 @@ button:active {
 
 .whiteLineBtn,
 .yellowLineBtn {
-  padding: 0.5rem 3rem;
+  padding: 0.4rem 3rem;
   width: 45%;
   border-radius: 12px;
   cursor: pointer;
@@ -260,42 +338,43 @@ button:active {
 
 #safetyQ {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 #valueRange {
   display: flex;
   width: 100%;
-  padding-bottom: 10%;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 5%;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 
 #currentValue {
-  font-size: 50px;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 #timeQ {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
   align-self: flex-start;
+  padding-left: 0.3rem;
 }
 
 #whyQ {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
   align-self: flex-start;
+  padding-left: 0.3rem;
 }
 
 #dayTimeCheck {
   font-weight: lighter;
   align-self: flex-start;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 0.8rem;
+  padding-left: 0.3rem;
 }
 
 #dayFieldset {
@@ -305,15 +384,14 @@ button:active {
 }
 
 .ratingBtnBottom {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 700;
   background-color: #ffffff;
   color: #7c41fa;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  border-radius: 12px;
-  height: 60px;
-  padding: 10px;
+  border-radius: 20px;
+  min-height: 2.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
 }
@@ -324,7 +402,7 @@ button:active {
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 100svh;
+  min-height: 100svh;
   background-color: #7c41fa;
   z-index: 10;
   position: relative;
@@ -332,6 +410,7 @@ button:active {
   padding-left: 10%;
   padding-right: 10%;
   box-sizing: border-box;
+  padding-bottom: 2.5rem;
 }
 
 #reasoningContainer {
@@ -342,7 +421,7 @@ button:active {
 
 #dayFieldset img {
   margin-right: 10px;
-  height: 30px;
+  height: 2rem;
 }
 
 #reasoningContainer label {
@@ -350,9 +429,9 @@ button:active {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 17px;
+  font-size: 1rem;
   color: white;
-  padding: 5px 0;
+  padding: 2px 0;
   box-sizing: border-box;
   font-weight: 600;
 }
@@ -362,7 +441,7 @@ button:active {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 17px;
+  font-size: 1rem;
   color: white;
   padding: 10px 0;
   box-sizing: border-box;
@@ -371,8 +450,8 @@ button:active {
 
 #dayFieldset input[type='checkbox'] {
   appearance: none;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 2rem;
   background-color: #ffffff;
   border-radius: 10px;
   margin-right: 10px;
@@ -404,7 +483,7 @@ button:active {
   align-items: center;
   flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 0.8rem;
   box-sizing: border-box;
   font-weight: 300;
   align-self: flex-start;
@@ -443,16 +522,17 @@ button:active {
 }
 
 #commentText {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
   align-self: flex-start;
+  padding-left: 0.3rem;
 }
 
 #comments {
   width: 93%;
-  height: 20%;
+  height: 3rem;
   padding: 10px;
-  font-size: 16px;
+  font-size: 0.8rem;
   color: #333;
   border-radius: 10px;
   resize: vertical;
@@ -472,14 +552,14 @@ button:active {
 }
 
 .submitBtn {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 700;
   background-color: #ffffff;
   color: #7c41fa;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  border-radius: 12px;
-  height: 60px;
+  border-radius: 20px;
+  min-height: 2.5rem;
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
@@ -496,11 +576,11 @@ input[type='range'] {
   -moz-appearance: none;
   appearance: none;
   width: 95%;
-  height: 15px;
+  height: 0.8rem;
   background: #ffffff;
   outline: none;
   transition: opacity 0.2s;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 /* Track styles for WebKit browsers (Chrome, Safari) */
@@ -554,12 +634,12 @@ input[type='range']::-ms-fill-upper {
 /* Thumb styles for WebKit browsers (Chrome, Safari) */
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
   background: #faec28;
   border-radius: 50%;
   cursor: pointer;
-  margin-top: -13px;
+  margin-top: -9px;
 }
 
 /* Thumb styles for Firefox */
@@ -614,23 +694,24 @@ input[type='range']:focus::-ms-fill-upper {
 input[type='email'] {
   width: 93%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: right 10px center;
-  background-size: 18px;
+  background-size: 0.8rem;
   box-shadow: none;
   outline: none;
+margin-top: -1rem;
 }
 
 /* Info icon */
 .info-icon {
   position: absolute;
   right: 10px;
-  transform: translateY(-120%);
-  font-size: 20px;
+  transform: translateY(-130%);
+  font-size: 1rem;
   color: #7c41fa;
   cursor: pointer;
 }
@@ -660,35 +741,40 @@ input[type='email'] {
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100svh;
+  min-height: 100svh;
   background-color: #ffffff;
   color: #7c41fa;
   position: absolute;
   z-index: 20;
   box-sizing: border-box;
-  padding: 0 12%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 2.5rem;
+  gap: 1rem;
 }
 
 #thanksDiv h2 {
-  font-size: 27px;
+  font-size: 1rem;
   font-weight: 700;
+  padding-left: 0.3rem;
 }
 
 #thanksDiv h3 {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 700;
   align-self: self-start;
+  padding-left: 0.3rem;
 }
 
 #newPinBtn {
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 700;
   background-color: #7c41fa;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  border-radius: 12px;
-  height: 60px;
+  border-radius: 20px;
+  min-height: 2.5rem;
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
@@ -740,13 +826,11 @@ button:active {
 
 @media (min-width: 600px) {
   #info_Container {
-    width: 40%;
-    top: 30%;
+    width: 30%;
   }
 
   #instructions_Container {
-    width: 40%;
-    top: 30%;
+    width: 30%;
   }
 
   #backToInstructionsBtn {
@@ -760,9 +844,9 @@ button:active {
   }
 
   #locationDiv {
-    padding-left: 25%;
-    padding-right: 25%;
-    width: 50%;
+    padding-left: 30%;
+    padding-right: 30%;
+    width: 40%;
   }
 
   #ratingDiv {
@@ -775,25 +859,11 @@ button:active {
     padding-left: 5%;
     padding-right: 5%;
     box-sizing: border-box;
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  #ratingDiv * {
-    margin: 0%;
-  }
-
-  #dayFieldset {
-    padding-bottom: 0%;
-    padding-top: 0%;
-  }
-
-  #timeQ {
-    padding-top: 0%;
   }
 
   #finalDiv {
@@ -806,64 +876,28 @@ button:active {
     padding-left: 5%;
     padding-right: 5%;
     box-sizing: border-box;
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  #finalDiv * {
-    margin: 0%;
-  }
-
-  #comments {
-    height: 50px;
-  }
-
-  .submitBtn {
-    height: auto;
-  }
-
-  #whyQ {
-    padding-top: 0%;
-  }
-
-  .submitBtn {
-    position: relative;
-    bottom: 0;
-    width: -webkit-fill-available;
   }
 
   #thanksDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 40vw;
     height: 100svh;
     padding-left: 5%;
     padding-right: 5%;
     box-sizing: border-box;
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  #thanksDiv * {
-    margin: 0%;
-    padding: 0%;
-  }
-  #thanksDiv h2,
-  #thanksDiv h3 {
-    margin: 0%;
-  }
-
-  .terms-label {
-    align-self: flex-start;
+    gap: 1rem;
   }
 }
