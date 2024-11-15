@@ -32,7 +32,7 @@ body {
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   border-top: 0.5px solid #2e185f;
-  min-height: 3rem;
+  min-height: 3.5rem;
 }
 
 .sticky-bar p {
@@ -53,8 +53,8 @@ body {
 
 /* Icon styles */
 .icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   transition: transform 0.3s ease; 
 }
 
@@ -240,7 +240,7 @@ button:active {
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
   height: 20vh;
   border: none;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 
 #locationDiv input[type='text'] {
@@ -290,7 +290,7 @@ button:active {
   padding-left: 10%;
   padding-right: 10%;
   box-sizing: border-box;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 
 #backBtn {
@@ -410,7 +410,7 @@ button:active {
   padding-left: 10%;
   padding-right: 10%;
   box-sizing: border-box;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 
 #reasoningContainer {
@@ -749,7 +749,7 @@ margin-top: -1rem;
   box-sizing: border-box;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
   gap: 1rem;
 }
 
