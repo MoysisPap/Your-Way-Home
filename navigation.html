@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7C41FA" />
+    <link rel="icon" href="source/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="./manifest.json" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./styles.css?v=2.01" />
+    <title>Stockholm Safety Map</title>
+  </head>
+  <body onload="initMap()">
+
+    <div class="directions-menu">
+        <div class="input-container">
+          <label for="start">Your Location:</label>
+          <input type="text" id="start" placeholder="Enter start location" />
+        </div>
+    
+        <div class="input-container">
+          <label for="end">Destination:</label>
+          <input type="text" id="end" placeholder="Enter destination" />
+        </div>
+    
+        <button id="getDirectionsBtn">Get Directions</button>
+      </div>
+
+    <div id="map"></div>
+    
+    <h1 class="hidden-h1">Your Way Home, safer cities, build together</h1>
+   
+    <div class="sticky-bar">
+      <a href="./index.html" class="icon-container">
+          <img src="./source/pin.png" alt="Drop a Pin icon" class="icon">
+          <p>Drop a Pin</p>
+      </a>
+      <a href="#navigation" class="icon-container">
+          <img src="./source/route-active.png" alt="Route icon" class="icon">
+          <p class="active">Navigation</p>
+      </a>
+      <a href="#profile" class="icon-container">
+          <img src="./source/Profile.png" alt="Profile icon" class="icon">
+          <p>Profile</p>
+      </a>
+      <a href="#about-us" class="icon-container">
+          <img src="./source/QnA.png" alt="Q n A icon" class="icon">
+          <p>About us</p>
+      </a>
+    </div>
+    <!-- Scripts -->
+    <script src="./navigation.js"></script>
+    <!-- Google Maps API -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu5Z6GY1vNs96Ic5WmTNp_IQv4r9sdRJE&callback=initMap"
+    ></script>
+  </body>
+</html>

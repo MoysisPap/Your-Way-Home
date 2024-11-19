@@ -16,24 +16,26 @@
   <body onload="initMap()">
     <div id="map"></div>
     <h1 class="hidden-h1">Your Way Home, safer cities, build together</h1>
+   
     <div class="sticky-bar">
-      <div class="icon-container">
+      <a href="./index.html" class="icon-container">
           <img src="./source/pin-active.png" alt="Drop a Pin icon" class="icon">
           <p class="active">Drop a Pin</p>
-      </div>
-      <div class="icon-container">
-          <img src="./source/Route.png" alt="Route icon" class="icon">
+      </a>
+      <a href="./navigation.html" class="icon-container">
+          <img src="./source/route.png" alt="Route icon" class="icon">
           <p>Navigation</p>
-      </div>
-      <div class="icon-container">
-          <img src="./source/Profile.png" alt="Profile icon" class="icon">
+      </a>
+      <a href="#profile" class="icon-container">
+          <img src="./source/profile.png" alt="Profile icon" class="icon">
           <p>Profile</p>
-      </div>
-      <div class="icon-container">
+      </a>
+      <a href="#about-us" class="icon-container">
           <img src="./source/QnA.png" alt="Q n A icon" class="icon">
           <p>About us</p>
-      </div>
-  </div>
+      </a>
+    </div>
+    
   
     <!-- Info Container -->
     <div id="info_Container" style="display: none">
@@ -226,7 +228,7 @@
     <!-- PWA Install Button -->
     <button id="installButton">Install App</button>
     <!-- Scripts -->
-    <script src="./stockholmScript.js"></script>
+    <script src="./pin.js"></script>
     <!-- Google Maps API -->
     <script
       async

@@ -8,6 +8,41 @@ body {
   overflow: hidden;
 }
 
+.directions-menu {
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.911);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 70%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #7c41fa;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5e2ce4;
+}
+
 .hidden-h1 {
   position: absolute;
   left: -9999px;
@@ -33,6 +68,17 @@ body {
   z-index: 1000;
   border-top: 0.5px solid #2e185f;
   min-height: 3.5rem;
+  color: #ffffff;
+}
+
+.sticky-bar a {
+  text-decoration: none;
+  color: inherit; /* Inherits the color from parent, in this case the white text */
+}
+
+.sticky-bar a:visited,
+.sticky-bar a:active {
+  color: inherit; /* Keeps the color same as normal, no default visited styles */
 }
 
 .sticky-bar p {
