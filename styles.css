@@ -79,6 +79,10 @@ button {
   border: none;
 }
 
+.active {
+  color: #FAEC28;
+}
+
 button:active {
   transform: translateY(3px);
   box-shadow: 0px 0px 0px 0px #00000040;
