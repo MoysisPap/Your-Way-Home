@@ -84,34 +84,59 @@ document.addEventListener('DOMContentLoaded', function () {
   initMap();
 });
 
-// Google Maps code
 let map;
 let marker;
 let userLocation = { lat: 59.33091976142107, lng: 18.060195177256297 }; // Default location
 
-// Request location permission and update marker position
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize the map
+  initMap();
+  document.getElementById('locationBtn').addEventListener('click', requestLocationPermission);
+});
+
+// Function to request location permission and update marker position
 function requestLocationPermission() {
+  const loadingIcon = document.getElementById('loadingIcon');
+  
+  // Show the loading icon only after the user grants location permission
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
+      // Success callback: If permission is granted
       (position) => {
+        // Show loading icon now that we have permission
+        loadingIcon.style.display = 'block';
+
+        // Update the user location with the actual coordinates
         userLocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
+
+        // Move the marker to the current location
         updateMarkerPosition(userLocation);
+
+        // Once the pin is placed, hide the loading icon
+        loadingIcon.style.display = 'none';
       },
+      // Error callback: If permission is denied
       () => {
         alert('Location permission denied, using default location');
-        updateMarkerPosition(userLocation); // Fallback to default location if denied
+        
+        // Move the marker to the fallback/default location
+        updateMarkerPosition(userLocation);
+
+        // Hide the loading icon if the location is denied
+        loadingIcon.style.display = 'none';
       }
     );
   } else {
     alert('Geolocation is not supported by this browser.');
     updateMarkerPosition(userLocation); // Fallback to default location
+    loadingIcon.style.display = 'none'; // Hide loading icon in case of failure
   }
 }
 
-// Initialize Google Maps with default or updated user location
+// Initialize the map with default or user location
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: userLocation,
@@ -130,6 +155,13 @@ function initMap() {
   });
 }
 
+// Update the marker position on the map and the input field
+function updateMarkerPosition(location) {
+  marker.setPosition(location);
+  map.setCenter(location);
+  updateLocationInput(location); // Update the location input with new position
+}
+
 // Update the location input field with the marker's position
 function updateLocationInput(latLng) {
   const geocoder = new google.maps.Geocoder();
@@ -142,12 +174,7 @@ function updateLocationInput(latLng) {
   });
 }
 
-// Update the marker's position on the map based on the location
-function updateMarkerPosition(location) {
-  marker.setPosition(location);
-  map.setCenter(location);
-  updateLocationInput(location); // Update the location input with new position
-}
+
 
 // Function to handle next or previous div transition
 function nextDiv(currentDivId, nextDivId) {
@@ -229,48 +256,21 @@ function submitForm() {
   document.getElementById('thanksDiv').style.display = 'flex';
 
   fetch(
-    'https://script.google.com/macros/s/AKfycbxl8SNTtCf0d2IIx8uaZCv9S4rMw3SwRBA0jk_uzXMxnXDvkartcLevPvYzAikaY6OowA/exec',
+    'https://script.google.com/macros/s/AKfycbx-jf9rbw6fhfFbhbfmbnlK3g9XBQK5bAB8fIsbls4CbNVX0p_i6zFk0ES-xQmU-sdFz/exec',
     {
       method: 'POST',
       body: data,
     }
   )
-    .then((response) => response.json())
-    .then((result) => {
-      console.log('Success:', result);
+    .then(response => response.json())
+    .then(data => {
+      console.log('Form submitted successfully:', data);
+      alert('Thank you for your submission!');
       formSubmitted = false;
     })
-    .catch((error) => {
-      console.error('Error:', error);
+    .catch(error => {
+      console.error('Error submitting form:', error);
+      alert('Error submitting form. Please try again later.');
       formSubmitted = false;
     });
-
-  console.log('Form submitted');
-}
-
-// Function to validate the form before submission
-function validateForm() {
-  let isValid = true;
-
-  let locationInput = document.getElementById('location');
-  if (!locationInput.value) {
-    alert('Please enter your location.');
-    isValid = false;
-  }
-
-  let ratingInput = document.getElementById('rating');
-  if (!ratingInput.value) {
-    alert('Please provide a rating.');
-    isValid = false;
-  }
-
-  let emailInput = document.getElementById('email');
-  // Regular expression for validating email format
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailInput.value || !emailPattern.test(emailInput.value)) {
-    alert('Please enter a valid email address.');
-    isValid = false;
-  }
-
-  return isValid;
 }
