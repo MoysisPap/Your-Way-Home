@@ -33,9 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('infoBtn')
     .addEventListener('click', () => showNextContainer(0));
-  document
-    .getElementById('instructions_Btn')
-    .addEventListener('click', () => showNextContainer(1));
+  
+  // Updated to trigger location permission
+  document.getElementById('instructions_Btn').addEventListener('click', () => {
+    requestLocationPermission();
+    showNextContainer(1);
+  });
 
   // Next button for locationDiv
   document.getElementById('locationBtn').addEventListener('click', () => {
@@ -84,13 +87,34 @@ document.addEventListener('DOMContentLoaded', function () {
 // Google Maps code
 let map;
 let marker;
+let userLocation = { lat: 59.33091976142107, lng: 18.060195177256297 }; // Default location
 
+// Request location permission and update marker position
+function requestLocationPermission() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        updateMarkerPosition(userLocation);
+      },
+      () => {
+        alert('Location permission denied, using default location');
+        updateMarkerPosition(userLocation); // Fallback to default location if denied
+      }
+    );
+  } else {
+    alert('Geolocation is not supported by this browser.');
+    updateMarkerPosition(userLocation); // Fallback to default location
+  }
+}
+
+// Initialize Google Maps with default or updated user location
 function initMap() {
-  const initialLocation = { lat: 59.33091976142107, lng: 18.060195177256297 };
-  const markerOffset = 0.0021;
-
   map = new google.maps.Map(document.getElementById('map'), {
-    center: initialLocation,
+    center: userLocation,
     zoom: 16,
   });
 
@@ -98,7 +122,7 @@ function initMap() {
     map: map,
     draggable: true,
     animation: google.maps.Animation.DROP,
-    position: { lat: initialLocation.lat + markerOffset, lng: initialLocation.lng },
+    position: userLocation,
   });
 
   google.maps.event.addListener(marker, 'dragend', function () {
@@ -106,6 +130,7 @@ function initMap() {
   });
 }
 
+// Update the location input field with the marker's position
 function updateLocationInput(latLng) {
   const geocoder = new google.maps.Geocoder();
   geocoder.geocode({ location: latLng }, function (results, status) {
@@ -115,6 +140,13 @@ function updateLocationInput(latLng) {
       console.error('Geocode was not successful: ' + status);
     }
   });
+}
+
+// Update the marker's position on the map based on the location
+function updateMarkerPosition(location) {
+  marker.setPosition(location);
+  map.setCenter(location);
+  updateLocationInput(location); // Update the location input with new position
 }
 
 // Function to handle next or previous div transition
@@ -240,70 +272,5 @@ function validateForm() {
     isValid = false;
   }
 
-  let checkBox = document.getElementById('terms');
-  if (!checkBox.checked) {
-    alert('Please accept the terms and privacy policy.');
-    isValid = false;
-  }
-
   return isValid;
 }
-// Add event listener for form submission
-document
-  .getElementById('feedbackForm')
-  .addEventListener('submit', function (event) {
-    if (!validateForm()) {
-      event.preventDefault();
-    } else {
-      submitForm();
-      event.preventDefault();
-    }
-  });
-
-function updateValue(value) {
-  document.getElementById('currentValue').innerText = value;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('./service-worker.js')
-      .then(() => console.log('Service Worker Registered!'))
-      .catch(console.error);
-  }
-
-  let deferredPrompt;
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    document.getElementById('installButton').style.display = 'block';
-  });
-
-  document
-    .getElementById('installButton')
-    .addEventListener('click', async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        console.log(`User response to the install prompt: ${outcome}`);
-        deferredPrompt = null;
-      }
-    });
-});
-
-function togglePopup(event) {
-  event.stopPropagation();
-  const popup = document.getElementById('emailPopup');
-  popup.classList.toggle('show');
-}
-
-// Close the popup when clicking outside of it
-document.addEventListener('click', function (event) {
-  const popup = document.getElementById('emailPopup');
-  if (
-    !popup.contains(event.target) &&
-    !event.target.classList.contains('info-icon')
-  ) {
-    popup.classList.remove('show');
-  }
-});
