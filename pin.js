@@ -1,4 +1,3 @@
-// Add a flag to track if the form has been submitted
 let formSubmitted = false;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -94,47 +93,31 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('locationBtn').addEventListener('click', requestLocationPermission);
 });
 
-// Function to request location permission and update marker position
 function requestLocationPermission() {
-  const loadingIcon = document.getElementById('loadingIcon');
-  
-  // Show the loading icon only after the user grants location permission
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      // Success callback: If permission is granted
       (position) => {
-        // Show loading icon now that we have permission
-        loadingIcon.style.display = 'block';
-
-        // Update the user location with the actual coordinates
         userLocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
 
-        // Move the marker to the current location
         updateMarkerPosition(userLocation);
-
-        // Once the pin is placed, hide the loading icon
-        loadingIcon.style.display = 'none';
       },
-      // Error callback: If permission is denied
-      () => {
-        alert('Location permission denied, using default location');
-        
-        // Move the marker to the fallback/default location
-        updateMarkerPosition(userLocation);
-
-        // Hide the loading icon if the location is denied
-        loadingIcon.style.display = 'none';
+      (error) => {
+        console.error('Error getting location:', error);
+        alert('Unable to retrieve your location.');
+      },
+      {
+        enableHighAccuracy: false,  // Disable high accuracy
+        timeout: 500                // Set a short timeout (500ms)
       }
     );
   } else {
     alert('Geolocation is not supported by this browser.');
-    updateMarkerPosition(userLocation); // Fallback to default location
-    loadingIcon.style.display = 'none'; // Hide loading icon in case of failure
   }
 }
+
 
 // Initialize the map with default or user location
 function initMap() {
