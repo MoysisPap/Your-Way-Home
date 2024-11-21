@@ -256,21 +256,114 @@ function submitForm() {
   document.getElementById('thanksDiv').style.display = 'flex';
 
   fetch(
-    'https://script.google.com/macros/s/AKfycbx-jf9rbw6fhfFbhbfmbnlK3g9XBQK5bAB8fIsbls4CbNVX0p_i6zFk0ES-xQmU-sdFz/exec',
+    'https://script.google.com/macros/s/AKfycbxl8SNTtCf0d2IIx8uaZCv9S4rMw3SwRBA0jk_uzXMxnXDvkartcLevPvYzAikaY6OowA/exec',
     {
       method: 'POST',
       body: data,
     }
   )
-    .then(response => response.json())
-    .then(data => {
-      console.log('Form submitted successfully:', data);
-      alert('Thank you for your submission!');
+    .then((response) => response.json())
+    .then((result) => {
+      console.log('Success:', result);
       formSubmitted = false;
     })
-    .catch(error => {
-      console.error('Error submitting form:', error);
-      alert('Error submitting form. Please try again later.');
+    .catch((error) => {
+      console.error('Error:', error);
       formSubmitted = false;
     });
+
+  console.log('Form submitted');
 }
+
+// Function to validate the form before submission
+function validateForm() {
+  let isValid = true;
+
+  let locationInput = document.getElementById('location');
+  if (!locationInput.value) {
+    alert('Please enter your location.');
+    isValid = false;
+  }
+
+  let ratingInput = document.getElementById('rating');
+  if (!ratingInput.value) {
+    alert('Please provide a rating.');
+    isValid = false;
+  }
+
+  let emailInput = document.getElementById('email');
+  // Regular expression for validating email format
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+    alert('Please enter a valid email address.');
+    isValid = false;
+  }
+
+  let checkBox = document.getElementById('terms');
+  if (!checkBox.checked) {
+    alert('Please accept the terms and privacy policy.');
+    isValid = false;
+  }
+
+  return isValid;
+}
+// Add event listener for form submission
+document
+  .getElementById('feedbackForm')
+  .addEventListener('submit', function (event) {
+    if (!validateForm()) {
+      event.preventDefault();
+    } else {
+      submitForm();
+      event.preventDefault();
+    }
+  });
+
+function updateValue(value) {
+  document.getElementById('currentValue').innerText = value;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./service-worker.js')
+      .then(() => console.log('Service Worker Registered!'))
+      .catch(console.error);
+  }
+
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installButton').style.display = 'block';
+  });
+
+  document
+    .getElementById('installButton')
+    .addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+        deferredPrompt = null;
+      }
+    });
+});
+
+function togglePopup(event) {
+  event.stopPropagation();
+  const popup = document.getElementById('emailPopup');
+  popup.classList.toggle('show');
+}
+
+// Close the popup when clicking outside of it
+document.addEventListener('click', function (event) {
+  const popup = document.getElementById('emailPopup');
+  if (
+    !popup.contains(event.target) &&
+    !event.target.classList.contains('info-icon')
+  ) {
+    popup.classList.remove('show');
+  }
+});
+
