@@ -58,8 +58,8 @@ body {
 
 /* Icon styles */
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   transition: transform 0.3s ease;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .icon-container:hover .icon {
   color: #d2d2d2;
-  transform: scale(1.1); /* Adjust scale as needed */
+  transform: scale(1.06); /* Adjust scale as needed */
 }
 
 .active {
