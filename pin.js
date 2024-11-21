@@ -109,14 +109,15 @@ function requestLocationPermission() {
         alert('Unable to retrieve your location.');
       },
       {
-        enableHighAccuracy: false,  // Disable high accuracy
-        timeout: 500                // Set a short timeout (500ms)
+        enableHighAccuracy: false,  // Speed over accuracy
+        timeout: Infinity, // No time limit (infinite timeout)
       }
     );
   } else {
     alert('Geolocation is not supported by this browser.');
   }
 }
+
 
 
 // Initialize the map with default or user location
