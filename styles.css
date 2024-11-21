@@ -182,15 +182,52 @@ button:active {
   width: 70%;
   position: absolute;
   justify-content: space-evenly;
+  align-items: center;
   z-index: 2;
   border-radius: 30px;
-  bottom: 11.5rem;
-  height: 15rem;
+  height: 81%;
   background-color: #7c41fa;
   color: #ffffff;
   flex-direction: column;
-  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 1rem;
+  padding-left: 10%;
+  padding-right: 10%;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 15%;
+}
+
+.icon-link {
+  display: inline-block; /* Makes the anchor tag inline with the text */
+  vertical-align: middle; /* Aligns the icon vertically with the text */
+  pointer-events: none;
+}
+
+#YWHlogo {
+  width: 80%;
+}
+
+#textBold {
+  margin: 0;
+}
+
+.text-icon {
+  height: 1rem;
+  width: auto;
+}
+
+#info_Container h3 {
+font-size: 1.1rem;
+font-weight: 700;
+}
+
+#info_Container p {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 170%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #instructions_Container {
@@ -201,7 +238,6 @@ button:active {
   z-index: 2;
   border-radius: 30px;
   bottom: 11.5rem;
-  height: 15rem;
   background-color: #7c41fa;
   color: #ffffff;
   flex-direction: column;
@@ -209,15 +245,16 @@ button:active {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#instructions_Container h2 {
-  align-self: center;
+#instructions_Container p {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 150%;
 }
 
 #instructions_Container img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
-  margin-top: 3%;
-  margin-bottom: 3%;
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
   align-self: center; /* Centers the image horizontally within the flex container */
 }
@@ -227,7 +264,18 @@ button:active {
   font-size: 1rem;
 }
 
-#infoBtn,
+#infoBtn {
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 2.5rem;
+  border-radius: 20px;
+  color: #7c41fa;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
 #instructions_Btn {
   background-color: #ffffff;
   width: 100%;
@@ -238,6 +286,7 @@ button:active {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  margin-top: 1rem;
 }
 
 #locationDiv {
@@ -838,12 +887,10 @@ button:active {
 /************* Desktop Version ********/
 
 @media (min-width: 600px) {
-  #info_Container {
+ 
+ #instructions_Container {
     width: 30%;
-  }
-
-  #instructions_Container {
-    width: 30%;
+    bottom: 8rem;
   }
 
   #backToInstructionsBtn {
@@ -860,6 +907,26 @@ button:active {
     padding-left: 30%;
     padding-right: 30%;
     width: 40%;
+  }
+
+  #info_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 100svh;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 4rem;
+    margin-top: 0;
+    border-radius: 0;
   }
 
   #ratingDiv {
