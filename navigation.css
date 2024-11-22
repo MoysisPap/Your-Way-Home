@@ -1,11 +1,18 @@
-body {
-  font-family: 'Montserrat', sans-serif;
+/* Global styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   font-weight: 700;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  margin: 0;
+  padding: 0;
 }
 
 #map {
@@ -32,12 +39,12 @@ body {
 
 .sticky-bar a {
   text-decoration: none;
-  color: inherit; /* Inherits the color from parent, in this case the white text */
+  color: inherit; /* Inherits the color from parent, in this case white */
 }
 
 .sticky-bar a:visited,
 .sticky-bar a:active {
-  color: inherit; /* Keeps the color same as normal, no default visited styles */
+  color: inherit; /* Keeps color same as normal, no default visited styles */
 }
 
 .sticky-bar p {
@@ -45,6 +52,7 @@ body {
   padding: 0;
   font-size: 0.8rem;
   padding-top: 2px;
+  font-weight: 400; /* Reduce font weight for readability */
 }
 
 /* Icon container styles */
@@ -54,12 +62,15 @@ body {
   align-items: center;
   color: #fff;
   transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevent shrinking in flex container */
 }
 
 /* Icon styles */
 .icon {
   width: 1.2rem;
   height: 1.2rem;
+  min-width: 24px; /* Ensure minimum width */
+  min-height: 24px; /* Ensure minimum height */
   object-fit: contain; /* Ensures the image fits properly */
   max-width: 100%;
   max-height: 100%;
@@ -76,12 +87,23 @@ body {
   transform: scale(1.06); /* Adjust scale as needed */
 }
 
+/* Active state */
 .active {
   color: #faec28;
 }
 
+/* Button styles */
 button {
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   box-shadow: 0px 4px 4px 0px #00000040;
   border: none;
+}
+
+/* Default image fallback styles */
+img {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
