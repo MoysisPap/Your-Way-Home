@@ -67,7 +67,7 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   transition: transform 0.3s ease;
-  object-fit: contain;
+  object-fit: scale-down; 
 }
 
 /* Optional: Add hover effect */
