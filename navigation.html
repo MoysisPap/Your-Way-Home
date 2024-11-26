@@ -14,6 +14,27 @@
     <title>Stockholm Safety Map</title>
   </head>
   <body onload="initMap()">
+
+
+    <div class="navigation-bar">
+      <!-- From location with circle icon -->
+      <div id="symbolsWrapper">
+        <span class="material-symbols-outlined circle-icon">radio_button_checked</span>
+        <span class="material-symbols-outlined pin-icon">pin_drop</span>
+      </div>
+      <!-- To location with pin icon -->
+      <div id="locationWrapper">
+        <input type="text" id="from-location" placeholder="From" />
+        <input type="text" id="to-location" placeholder="To" />
+      </div>
+  
+
+      <!-- Swap button -->
+       <div>
+      <span class="material-symbols-outlined swap-icon">swap_horiz</span>
+    </div>
+    </div>
+    
     <div id="map"></div>
     <!-- Sticky Bar -->
     <div class="sticky-bar">

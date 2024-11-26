@@ -125,7 +125,16 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: userLocation,
     zoom: 16,
+    zoomControl: true, // Enable zoom control
+    streetViewControl: true, // Enable street view control
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER, // Position zoom control at right center
+    },
+    streetViewControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER, // Position street view control at right center
+    },
   });
+
 
   marker = new google.maps.Marker({
     map: map,
