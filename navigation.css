@@ -34,7 +34,7 @@ body {
 #symbolsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 2.1rem;
+  gap: 2.2rem;
 }
 
 #locationWrapper {
@@ -44,27 +44,36 @@ body {
   width: 100%;
 }
 
-/* Icons styling */
-.material-symbols-outlined {
-  font-size: 1.2rem;
-  color: #7c41fa;
-  cursor: pointer;
+.locationNav-icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  display: inline-block; 
+  align-self: center;
 }
 
-/* Swap button style */
-.swap-icon {
-  font-size: 1.2rem;
-  background-color: #7c41fa;
-  color: white;
-  padding: 0.3rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.pin-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+  display: inline-block; 
 }
 
-.swap-icon:hover {
-  background-color: #6a33d1;
+.swap-button {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
+
+.swap-button:hover {
+  transform: scale(1.1);
+}
+
+.swap-button:active {
+  transform: scale(0.9);
+}
+
 
 /* Input styling */
 input[type="text"] {
@@ -80,8 +89,76 @@ input[type="text"] {
 
 input[type="text"]::placeholder {
   color: #7c41fa; /* Change this color to whatever you want */
-  opacity: 0.6; /* Make sure the placeholder is fully opaque (default is 0.5) */
+  opacity: 0.7; /* Make sure the placeholder is fully opaque (default is 0.5) */
 }
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #7c41fa; /* Purple border */
+  background-color: #f9f9ff; /* Light purple/white background */
+  box-shadow: 0 0 5px #402182;
+}
+
+/* Hidden div styles */
+.sign-in-div {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7c41fa;
+  color: white;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  border-radius: 30px;
+  min-width: 90%;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Close button as image */
+.close-btn {
+  position: absolute;
+  top: 1.2rem;    /* Distance from the top of the div */
+  right: 1.2rem;  /* Distance from the right side of the div */
+  cursor: pointer;
+  width: 1rem;  /* Adjust size as needed */
+  height: 1rem;
+}
+
+#google-title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+}
+
+.google-btn {
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+  margin-top: 20px;
+}
+
+.google-btn:enabled {
+  cursor: pointer;
+  background-color: #34a853;
+}
+
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+/* Optional: style for the checkbox */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
 
 /* Sticky bar styles */
 .sticky-bar {
@@ -127,8 +204,11 @@ input[type="text"]::placeholder {
 
 /* Icon styles */
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain; /* Ensures the image fits properly */
+  max-width: 100%;
+  max-height: 100%;
   transition: transform 0.3s ease;
 }
 
@@ -139,7 +219,7 @@ input[type="text"]::placeholder {
 
 .icon-container:hover .icon {
   color: #d2d2d2;
-  transform: scale(1.1); /* Adjust scale as needed */
+  transform: scale(1.06); /* Adjust scale as needed */
 }
 
 .active {

@@ -14,28 +14,61 @@
     <title>Stockholm Safety Map</title>
   </head>
   <body onload="initMap()">
-
-
     <div class="navigation-bar">
       <!-- From location with circle icon -->
       <div id="symbolsWrapper">
-        <span class="material-symbols-outlined circle-icon">radio_button_checked</span>
-        <span class="material-symbols-outlined pin-icon">pin_drop</span>
+        <img
+          src="./source/NavLocation.png"
+          alt="Pin icon"
+          class="locationNav-icon"
+        />
+        <img src="./source/NavRedPin.png" alt="Pin icon" class="pin-icon" />
       </div>
       <!-- To location with pin icon -->
       <div id="locationWrapper">
         <input type="text" id="from-location" placeholder="From" />
         <input type="text" id="to-location" placeholder="To" />
       </div>
-  
 
       <!-- Swap button -->
-       <div>
-      <span class="material-symbols-outlined swap-icon">swap_horiz</span>
+      <div>
+        <img
+          src="./source/swapLocation.png"
+          alt="Swap locations"
+          id="swap-icon"
+          class="swap-button"
+          onclick="swapLocations()"
+        />
+      </div>
     </div>
-    </div>
-    
+
     <div id="map"></div>
+
+    <!-- Google Signin Div -->
+    <div id="googleSignInDiv" class="sign-in-div">
+      <!-- Close button as an image -->
+      <img
+        src="./source/exit-icon.png"
+        alt="Close"
+        id="closeButton"
+        class="close-btn"
+      />
+      <p id="google-title">
+        Access safe and reliable<br />navigation by signing in with<br />your
+        Google account.
+      </p>
+
+      <!-- Terms and Privacy Checkbox -->
+      <label for="termsCheckbox">
+        <input type="checkbox" id="termsCheckbox" /> I accept
+        <a href="https://yourwayhome.eu/terms-of-use">Terms</a> and <a href="https://yourwayhome.eu/privacy-policy">Privacy Policy</a>
+      </label>
+
+      <!-- Sign-in with Google button, initially disabled -->
+      <button id="googleSignInButton" class="google-btn" disabled>
+        Continue with Google
+      </button>
+    </div>
     <!-- Sticky Bar -->
     <div class="sticky-bar">
       <a href="./index.html" class="icon-container">

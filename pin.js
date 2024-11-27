@@ -221,7 +221,7 @@ function submitForm() {
   let rating = document.getElementById('rating').value;
   let comments = document.getElementById('comments').value;
   let email = document.getElementById('email').value;
-  let contact = document.getElementById('contact').value;
+  let contact = document.getElementById('contact').checked ? 'Yes' : 'No';
 
   let timeOfDayCheckboxes = document.querySelectorAll(
     'input[name="timeOfDay"]:checked'
