@@ -14,42 +14,93 @@ body {
   flex-shrink: 2;
 }
 
-/* Navigation bar styling */
-.navigation-bar {
-  position: fixed; /* Fixed at the top */
+#navWrapper {
+  position: fixed; /* Sticks the navigation bar to the top */
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem 2rem;
+  width: 100%; /* Full width of the viewport */
+  background-color: #ffffff; /* Add a background color to make it stand out */
+  z-index: 1000; /* Ensures it appears above the map */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  box-sizing: border-box;
+  border-bottom: 1px solid #7c41fa;
+}
+
+.navigation-bar {
+  display: flex; /* Horizontal layout for the bar */
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
   display: flex;
   align-items: center; 
   gap: 0.6rem;
-  z-index: 10;
-  box-sizing: border-box;
-  border-bottom: 1px solid #7c41fa;
 }
 
 #symbolsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 1.8rem;
 }
 
 #locationWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
   width: 100%;
+}
+.swap-button {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+#navColors {
+  display: flex; /* Horizontally aligns the items */
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.4rem;
+  padding-right: 1.6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+}
+
+#circle-purple {
+  width: 1rem;
+  height: 1rem;
+  background-color: #7c41fa;
+  border-radius: 50%;
+}
+
+#circle-orange {
+  width: 1rem;
+  height: 1rem;
+  background-color: #fcb763;
+  border-radius: 50%;
+}
+
+#circle-darkOrange {
+  width: 1rem;
+  height: 1rem;
+  background-color: #C4640A;;
+  border-radius: 50%;
+}
+
+.nav-p{
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .locationNav-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
   object-fit: contain;
   display: inline-block; 
   align-self: center;
+  padding-top: 3px;
 }
 
 .pin-icon {
@@ -78,7 +129,7 @@ body {
 /* Input styling */
 input[type="text"] {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.4rem;
   border: 1px solid;
   border-radius: 10px;
   font-size: 1rem;
@@ -230,4 +281,21 @@ button {
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   box-shadow: 0px 4px 4px 0px #00000040;
   border: none;
+}
+
+
+/************* Desktop Version ********/
+
+@media (min-width: 600px) {
+
+#navWrapper {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.sign-in-div {
+  min-width: 40%
+ 
+}
+
 }

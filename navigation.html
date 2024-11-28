@@ -14,34 +14,44 @@
     <title>Stockholm Safety Map</title>
   </head>
   <body onload="initMap()">
-    <div class="navigation-bar">
-      <!-- From location with circle icon -->
-      <div id="symbolsWrapper">
-        <img
-          src="./source/NavLocation.png"
-          alt="Pin icon"
-          class="locationNav-icon"
-        />
-        <img src="./source/NavRedPin.png" alt="Pin icon" class="pin-icon" />
-      </div>
-      <!-- To location with pin icon -->
-      <div id="locationWrapper">
-        <input type="text" id="from-location" placeholder="From" />
-        <input type="text" id="to-location" placeholder="To" />
-      </div>
+    <div id="navWrapper">
+      <div class="navigation-bar">
+        <!-- From location with circle icon -->
+        <div id="symbolsWrapper">
+          <img
+            src="./source/NavLocation.png"
+            alt="Pin icon"
+            class="locationNav-icon"
+          />
+          <img src="./source/NavRedPin.png" alt="Pin icon" class="pin-icon" />
+        </div>
+        <!-- To location with pin icon -->
+        <div id="locationWrapper">
+          <input type="text" id="from-location" placeholder="From" />
+          <input type="text" id="to-location" placeholder="To" />
+        </div>
 
-      <!-- Swap button -->
-      <div>
-        <img
-          src="./source/swapLocation.png"
-          alt="Swap locations"
-          id="swap-icon"
-          class="swap-button"
-          onclick="swapLocations()"
-        />
+        <!-- Swap button -->
+        <div>
+          <img
+            src="./source/swapLocation.png"
+            alt="Swap locations"
+            id="swap-icon"
+            class="swap-button"
+            onclick="swapLocations()"
+          />
+        </div>
+      </div>
+      <div id="navColors">
+        <img src="./source/personWalking.png" alt="person walking" />
+        <div id="circle-purple"></div>
+        <p class="nav-p">Mostly safe</p>
+        <div id="circle-orange"></div>
+        <p class="nav-p">Moderate</p>
+        <div id="circle-darkOrange"></div>
+        <p class="nav-p">Be cautious</p>
       </div>
     </div>
-
     <div id="map"></div>
 
     <!-- Google Signin Div -->
@@ -61,7 +71,8 @@
       <!-- Terms and Privacy Checkbox -->
       <label for="termsCheckbox">
         <input type="checkbox" id="termsCheckbox" /> I accept
-        <a href="https://yourwayhome.eu/terms-of-use">Terms</a> and <a href="https://yourwayhome.eu/privacy-policy">Privacy Policy</a>
+        <a href="https://yourwayhome.eu/terms-of-use">Terms</a> and
+        <a href="https://yourwayhome.eu/privacy-policy">Privacy Policy</a>
       </label>
 
       <!-- Sign-in with Google button, initially disabled -->
