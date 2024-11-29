@@ -20,7 +20,6 @@ body {
   border: 0;
 }
 
-/* Sticky bar styles */
 .sticky-bar {
   position: fixed;
   bottom: 0;
@@ -38,12 +37,12 @@ body {
 
 .sticky-bar a {
   text-decoration: none;
-  color: inherit; /* Inherits the color from parent, in this case the white text */
+  color: inherit;
 }
 
 .sticky-bar a:visited,
 .sticky-bar a:active {
-  color: inherit; /* Keeps the color same as normal, no default visited styles */
+  color: inherit;
 }
 
 .sticky-bar p {
@@ -53,7 +52,6 @@ body {
   padding-top: 2px;
 }
 
-/* Icon container styles */
 .icon-container {
   display: flex;
   flex-direction: column;
@@ -62,24 +60,22 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Icon styles */
 .icon {
   width: 1.2rem;
   height: 1.2rem;
-  object-fit: contain; /* Ensures the image fits properly */
+  object-fit: contain;
   max-width: 100%;
   max-height: 100%;
   transition: transform 0.3s ease;
 }
 
-/* Optional: Add hover effect */
 .icon-container:hover {
   transform: scale(1.06);
 }
 
 .icon-container:hover .icon {
   color: #d2d2d2;
-  transform: scale(1.06); /* Adjust scale as needed */
+  transform: scale(1.06);
 }
 
 h2 {
@@ -110,46 +106,46 @@ button:active {
 }
 
 .timeQ-wrapper {
-  display: inline-flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
-  gap: 0.1rem; /* Eliminates any space between them */
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.1rem;
   width: 100%;
 }
 
 .time-wrapper {
-  display: flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
-  gap: 0.8rem; /* Eliminates any space between them */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   width: 100%;
   margin-bottom: 10%;
 }
 
 .reasoning-wrapper {
-  display: flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
+  display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 0.8rem;
 }
 
 .btnsSection {
-  display: flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
-  gap: 0.8rem; /* Eliminates any space between them */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   width: 100%;
   margin-bottom: 10%;
 }
 
 .btns2Section {
-  display: flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
-  gap: 0.8rem; /* Eliminates any space between them */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   width: 100%;
 }
 
 .safetyRange {
-  display: inline-flex; /* Keeps the two together */
-  flex-direction: column; /* Ensures they stack directly */
-  gap: 0.8rem; /* Eliminates any space between them */
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.8rem;
   width: 100%;
   align-items: center;
   margin-bottom: 10%;
@@ -201,8 +197,8 @@ button:active {
 }
 
 .icon-link {
-  display: inline-block; /* Makes the anchor tag inline with the text */
-  vertical-align: middle; /* Aligns the icon vertically with the text */
+  display: inline-block;
+  vertical-align: middle;
   pointer-events: none;
 }
 
@@ -220,8 +216,8 @@ button:active {
 }
 
 #info_Container h3 {
-font-size: 1.1rem;
-font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 #info_Container p {
@@ -258,8 +254,8 @@ font-weight: 700;
 #instructions_Container img {
   max-width: 40%;
   height: auto;
-  object-fit: contain; /* Ensures the image maintains its aspect ratio */
-  align-self: center; /* Centers the image horizontally within the flex container */
+  object-fit: contain;
+  align-self: center;
 }
 
 #info_Container li {
@@ -637,7 +633,6 @@ font-weight: 700;
   box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-/* General styles for the range input */
 input[type='range'] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -650,7 +645,6 @@ input[type='range'] {
   border-radius: 20px;
 }
 
-/* Track styles for WebKit browsers (Chrome, Safari) */
 input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
   height: 15px;
@@ -665,7 +659,6 @@ input[type='range']::-webkit-slider-runnable-track {
   border-radius: 15px;
 }
 
-/* Track styles for Firefox */
 input[type='range']::-moz-range-track {
   width: 100%;
   height: 15px;
@@ -674,7 +667,6 @@ input[type='range']::-moz-range-track {
   border-radius: 15px;
 }
 
-/* Track styles for Internet Explorer */
 input[type='range']::-ms-track {
   width: 100%;
   height: 15px;
@@ -684,12 +676,10 @@ input[type='range']::-ms-track {
   color: transparent;
 }
 
-/* Filled portion styles for Firefox */
 input[type='range']::-moz-range-progress {
   background: #32e114;
 }
 
-/* Filled portion styles for Internet Explorer */
 input[type='range']::-ms-fill-lower {
   background: #32e114;
 }
@@ -698,7 +688,6 @@ input[type='range']::-ms-fill-upper {
   background: #ffffff;
 }
 
-/* Thumb styles for WebKit browsers (Chrome, Safari) */
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 2rem;
@@ -709,7 +698,6 @@ input[type='range']::-webkit-slider-thumb {
   margin-top: -9px;
 }
 
-/* Thumb styles for Firefox */
 input[type='range']::-moz-range-thumb {
   width: 40px;
   height: 40px;
@@ -718,7 +706,6 @@ input[type='range']::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* Thumb styles for Internet Explorer */
 input[type='range']::-ms-thumb {
   width: 40px;
   height: 40px;
@@ -727,7 +714,6 @@ input[type='range']::-ms-thumb {
   cursor: pointer;
 }
 
-/* Focus styles */
 input[type='range']:focus::-webkit-slider-runnable-track {
   background: linear-gradient(
     to right,
@@ -773,7 +759,6 @@ input[type='email'] {
   margin-top: -1rem;
 }
 
-/* Info icon */
 .info-icon {
   position: absolute;
   right: 10px;
@@ -783,7 +768,6 @@ input[type='email'] {
   cursor: pointer;
 }
 
-/* Popup styles */
 .popup {
   display: none;
   position: absolute;
@@ -916,8 +900,7 @@ button:active {
 /************* Desktop Version ********/
 
 @media (min-width: 600px) {
- 
- #instructions_Container {
+  #instructions_Container {
     width: 30%;
     bottom: 8rem;
   }

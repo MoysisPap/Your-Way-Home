@@ -9,13 +9,13 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: initialLocation,
     zoom: 16,
-    zoomControl: true, // Enable zoom control
-    streetViewControl: true, // Enable street view control
+    zoomControl: true,
+    streetViewControl: true,
     zoomControlOptions: {
-      position: google.maps.ControlPosition.RIGHT_CENTER, // Position zoom control at right center
+      position: google.maps.ControlPosition.RIGHT_CENTER,
     },
     streetViewControlOptions: {
-      position: google.maps.ControlPosition.RIGHT_CENTER, // Position street view control at right center
+      position: google.maps.ControlPosition.RIGHT_CENTER,
     },
   });
 
@@ -42,7 +42,7 @@ document.body.addEventListener('click', function () {
 
 // Close the Google Sign-In div when the close image is clicked
 document.getElementById('closeButton').addEventListener('click', function (event) {
-  event.stopPropagation(); // Prevent the click from propagating to the body
+  event.stopPropagation();
   document.getElementById('googleSignInDiv').style.display = 'none';
 });
 

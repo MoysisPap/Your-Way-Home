@@ -1,4 +1,4 @@
-// Google Maps code
+// Google Maps
 let map;
 let marker;
 

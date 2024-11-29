@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('infoBtn')
     .addEventListener('click', () => showNextContainer(0));
-  
+
   // Updated to trigger location permission
   document.getElementById('instructions_Btn').addEventListener('click', () => {
     requestLocationPermission();
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Please enter your location before proceeding.');
     } else {
       showNextContainer(2);
-      // Hide the install button on mobile view
       if (window.innerWidth <= 600) {
         document.getElementById('installButton').style.display = 'none';
       }
@@ -85,12 +84,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let map;
 let marker;
-let userLocation = { lat: 59.33091976142107, lng: 18.060195177256297 }; // Default location
+let userLocation = { lat: 59.33091976142107, lng: 18.060195177256297 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize the map
   initMap();
-  document.getElementById('locationBtn').addEventListener('click', requestLocationPermission);
+  document
+    .getElementById('locationBtn')
+    .addEventListener('click', requestLocationPermission);
 });
 
 function requestLocationPermission() {
@@ -109,8 +109,8 @@ function requestLocationPermission() {
         alert('Unable to retrieve your location.');
       },
       {
-        enableHighAccuracy: false,  // Speed over accuracy
-        timeout: Infinity, // No time limit (infinite timeout)
+        enableHighAccuracy: false,
+        timeout: Infinity,
       }
     );
   } else {
@@ -118,23 +118,20 @@ function requestLocationPermission() {
   }
 }
 
-
-
 // Initialize the map with default or user location
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: userLocation,
     zoom: 16,
-    zoomControl: true, // Enable zoom control
-    streetViewControl: true, // Enable street view control
+    zoomControl: true,
+    streetViewControl: true,
     zoomControlOptions: {
-      position: google.maps.ControlPosition.RIGHT_CENTER, // Position zoom control at right center
+      position: google.maps.ControlPosition.RIGHT_CENTER,
     },
     streetViewControlOptions: {
-      position: google.maps.ControlPosition.RIGHT_CENTER, // Position street view control at right center
+      position: google.maps.ControlPosition.RIGHT_CENTER,
     },
   });
-
 
   marker = new google.maps.Marker({
     map: map,
@@ -152,7 +149,7 @@ function initMap() {
 function updateMarkerPosition(location) {
   marker.setPosition(location);
   map.setCenter(location);
-  updateLocationInput(location); // Update the location input with new position
+  updateLocationInput(location);
 }
 
 // Update the location input field with the marker's position
@@ -166,8 +163,6 @@ function updateLocationInput(latLng) {
     }
   });
 }
-
-
 
 // Function to handle next or previous div transition
 function nextDiv(currentDivId, nextDivId) {
@@ -188,10 +183,10 @@ function validateInputs(div) {
   const inputs = div.querySelectorAll('input[required], textarea[required]');
   for (const input of inputs) {
     if (!input.value || (input.type === 'checkbox' && !input.checked)) {
-      return false; 
+      return false;
     }
   }
-  return true; 
+  return true;
 }
 
 // Function to handle back div transition
@@ -359,4 +354,3 @@ document.addEventListener('click', function (event) {
     popup.classList.remove('show');
   }
 });
-
