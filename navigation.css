@@ -154,17 +154,22 @@ input[type="text"]:focus {
 .sign-in-div {
   display: none; /* Hidden by default */
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #7c41fa;
   color: white;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   border-radius: 30px;
   min-width: 90%;
   z-index: 1000;
   text-align: center;
+}
+
+#terms-of-use {
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 /* Close button as image */
@@ -179,19 +184,21 @@ input[type="text"]:focus {
 
 #google-title {
   font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   line-height: 30px;
 }
 
 .google-btn {
-  background-color: #4285f4;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: not-allowed;
-  margin-top: 20px;
+  background-color: #ffffff;
+    width: 80%;
+    min-height: 2.5rem;
+    border-radius: 20px;
+    color: #7c41fa;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 .google-btn:enabled {
@@ -200,16 +207,28 @@ input[type="text"]:focus {
 }
 
 a {
-  color: #4285f4;
-  text-decoration: none;
+  color: #ffffff;
 }
 
 /* Optional: style for the checkbox */
 input[type="checkbox"] {
   margin-right: 10px;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
 }
 
-
+#sign-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
 
 /* Sticky bar styles */
 .sticky-bar {

@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./navigation.css" />
     <title>Stockholm Safety Map</title>
   </head>
@@ -63,22 +64,25 @@
         id="closeButton"
         class="close-btn"
       />
+      <div id="sign-wrapper">
       <p id="google-title">
-        Access safe and reliable<br />navigation by signing in with<br />your
+        Access our navigation<br>by signing in with your<br>
         Google account.
       </p>
 
       <!-- Terms and Privacy Checkbox -->
-      <label for="termsCheckbox">
-        <input type="checkbox" id="termsCheckbox" /> I accept
-        <a href="https://yourwayhome.eu/terms-of-use">Terms</a> and
-        <a href="https://yourwayhome.eu/privacy-policy">Privacy Policy</a>
-      </label>
+      
+        <label id="terms-of-use" for="termsCheckbox">
+          <input type="checkbox" id="termsCheckbox" /> I accept
+          <a href="https://yourwayhome.eu/terms-of-use" target="_blank">Terms</a> of use and<br>
+          <a href="https://yourwayhome.eu/privacy-policy" target="_blank">Privacy Policy</a> *
+        </label>
 
-      <!-- Sign-in with Google button, initially disabled -->
-      <button id="googleSignInButton" class="google-btn" disabled>
-        Continue with Google
-      </button>
+        <!-- Sign-in with Google button, initially disabled -->
+        <button id="googleSignInButton" class="google-btn" disabled>
+          Continue with Google
+        </button>
+      </div>
     </div>
     <!-- Sticky Bar -->
     <div class="sticky-bar">
