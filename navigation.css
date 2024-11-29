@@ -34,7 +34,7 @@ body {
   padding-left: 1.5rem;
   padding-top: 1.5rem;
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 0.6rem;
 }
 
@@ -45,9 +45,9 @@ body {
 }
 
 #locationWrapper {
-display: flex;
-flex-direction: column;
-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
 }
 .swap-button {
@@ -63,7 +63,6 @@ gap: 1rem;
   padding-right: 1.6rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
 }
 
 #circle-purple {
@@ -83,11 +82,11 @@ gap: 1rem;
 #circle-darkOrange {
   width: 1rem;
   height: 1rem;
-  background-color: #C4640A;;
+  background-color: #c4640a;
   border-radius: 50%;
 }
 
-.nav-p{
+.nav-p {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;
@@ -98,7 +97,7 @@ gap: 1rem;
   width: 1.1rem;
   height: 1.1rem;
   object-fit: contain;
-  display: inline-block; 
+  display: inline-block;
   align-self: center;
   padding-top: 3px;
 }
@@ -107,7 +106,7 @@ gap: 1rem;
   width: 1.3rem;
   height: 1.3rem;
   object-fit: contain;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .swap-button {
@@ -125,9 +124,8 @@ gap: 1rem;
   transform: scale(0.9);
 }
 
-
 /* Input styling */
-input[type="text"] {
+input[type='text'] {
   width: 100%;
   padding: 0.4rem;
   border: 1px solid;
@@ -138,12 +136,12 @@ input[type="text"] {
   color: #7c41fa;
 }
 
-input[type="text"]::placeholder {
+input[type='text']::placeholder {
   color: #7c41fa; /* Change this color to whatever you want */
   opacity: 0.7; /* Make sure the placeholder is fully opaque (default is 0.5) */
 }
 
-input[type="text"]:focus {
+input[type='text']:focus {
   outline: none;
   border: 1px solid #7c41fa; /* Purple border */
   background-color: #f9f9ff; /* Light purple/white background */
@@ -170,15 +168,18 @@ input[type="text"]:focus {
 #terms-of-use {
   font-size: 0.875rem;
   font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 /* Close button as image */
 .close-btn {
   position: absolute;
-  top: 1.2rem;    /* Distance from the top of the div */
-  right: 1.2rem;  /* Distance from the right side of the div */
+  top: 1.2rem; /* Distance from the top of the div */
+  right: 1.2rem; /* Distance from the right side of the div */
   cursor: pointer;
-  width: 1rem;  /* Adjust size as needed */
+  width: 1rem; /* Adjust size as needed */
   height: 1rem;
 }
 
@@ -190,20 +191,21 @@ input[type="text"]:focus {
 }
 
 .google-btn {
-  background-color: #ffffff;
-    width: 80%;
-    min-height: 2.5rem;
-    border-radius: 20px;
-    color: #7c41fa;
-    font-size: 1rem;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  width: 75%;
+  min-height: 2.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: not-allowed;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .google-btn:enabled {
   cursor: pointer;
-  background-color: #34a853;
+  background-color: #ffffff;
+  color: #7c41fa;
 }
 
 a {
@@ -211,16 +213,21 @@ a {
 }
 
 /* Optional: style for the checkbox */
-input[type="checkbox"] {
+input[type='checkbox'] {
   margin-right: 10px;
   appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
-  margin-right: 10px;
   outline: none;
   cursor: pointer;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+input[type='checkbox']:checked {
+  background-color: #faec28;
 }
 
 #sign-wrapper {
@@ -302,19 +309,15 @@ button {
   border: none;
 }
 
-
 /************* Desktop Version ********/
 
 @media (min-width: 600px) {
+  #navWrapper {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
 
-#navWrapper {
-  padding-left: 30%;
-  padding-right: 30%;
-}
-
-.sign-in-div {
-  min-width: 40%
- 
-}
-
+  .sign-in-div {
+    min-width: 30%;
+  }
 }
