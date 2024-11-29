@@ -59,8 +59,8 @@ body {
   display: flex; /* Horizontally aligns the items */
   align-items: center;
   justify-content: space-between;
-  padding-left: 1.4rem;
-  padding-right: 1.6rem;
+  padding-left: 1.3rem;
+  padding-right: 1.7rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 }
@@ -91,6 +91,11 @@ body {
   padding: 0;
   font-size: 0.8rem;
   font-weight: 400;
+}
+
+.circle-p-wrapper {
+  display: flex;
+  gap: 0.1rem;
 }
 
 .locationNav-icon {
@@ -320,5 +325,9 @@ button {
 
   .sign-in-div {
     min-width: 30%;
+  }
+
+  #navColors {
+  justify-content: space-evenly;
   }
 }
